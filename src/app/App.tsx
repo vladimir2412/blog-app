@@ -7,26 +7,12 @@ import { SideBar } from 'widgets/SideBar';
 import { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Component = () => {
-	const { t, i18n } = useTranslation();
-	const handleTranslate = () => {
-		i18n.changeLanguage(i18n.language === 'ua' ? 'en' : 'ua');
-	};
-	return (
-		<div>
-			<button onClick={handleTranslate}>{t('translate')}</button>
-			{t('test')}
-		</div>
-	);
-};
-
 const App = () => {
 	const { theme } = useTheme();
 	return (
 		<div className={classNames('app', {}, [theme])}>
-			<Suspense fallback="">
+			<Suspense fallback="loading...">
 				<NavBar />
-				<Component />
 				<div className="content-page">
 					<SideBar />
 					<AppRouter />
