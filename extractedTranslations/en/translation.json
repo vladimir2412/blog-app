@@ -1,3 +1,6 @@
 {
-  "language": "language"
+  "TOGGLE": "TOGGLE",
+  "language": "language",
+  "main": "main",
+  "toggle": "toggle"
 }
